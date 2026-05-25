@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS guestbook (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  relationship TEXT,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_guestbook_created ON guestbook(created_at DESC);
+
+CREATE TABLE IF NOT EXISTS candles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_candles_created ON candles(created_at DESC);
