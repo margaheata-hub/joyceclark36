@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Stone & Moss palette */
+  --color-moss-50:  #f3f6f1;
+  --color-moss-100: #e3ebde;
+  --color-moss-200: #c7d6bd;
+  --color-moss-300: #a4ba95;
+  --color-moss-400: #7a8b6f;
+  --color-moss-500: #5f7156;
+  --color-moss-600: #4a5b43;
+  --color-moss-700: #3b4836;
+  --color-moss-800: #2d3729;
+  --color-moss-900: #21281e;
+
+  --color-cream-50:  #fbf8f1;
+  --color-cream-100: #f5efe3;
+  --color-cream-200: #ebe0c8;
+  --color-cream-300: #d9c8a3;
+
+  --color-clay-50:  #faf0eb;
+  --color-clay-100: #f0d7cb;
+  --color-clay-200: #e4b8a3;
+  --color-clay-300: #d49476;
+  --color-clay-400: #b8765a;
+  --color-clay-500: #985a40;
+  --color-clay-600: #74452f;
+
+  --color-slate-ink: #2d2e2b;
+
+  --color-background: #f5efe3;
+  --color-foreground: #2d2e2b;
+
+  /* Serif for headings, sans for body */
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-sans:  "Inter", "system-ui", -apple-system, "Segoe UI", sans-serif;
+}
+
+html, body, #root { min-height: 100vh; }
+body {
+  background-color: var(--color-cream-100);
+  color: var(--color-slate-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
