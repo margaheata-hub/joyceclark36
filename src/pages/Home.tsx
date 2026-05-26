@@ -42,14 +42,19 @@ export default function Home() {
 
         <p className="text-moss-700 leading-relaxed">
           Gram to Dan, Karen, and Andrew. GG to Sky, Aspen, Camden, and Josie.
-          She lived many lives &mdash; in Manchester, Florida, Germany, Long Island,
-          and Pocomoke City &mdash; and carried every one of them with her.
+          She lived many lives, in Manchester, Florida, Germany, Long Island,
+          and Pocomoke City, and carried every one of them with her.
+        </p>
+
+        <p className="text-moss-700 leading-relaxed">
+          Beloved by her friends and all who knew her. Her warmth was contagious;
+          her humor easy; her positivity unshakable. Strangers became friends within
+          minutes, and friends became family.
         </p>
 
         <p className="text-moss-700 leading-relaxed">
           She was preceded by her daughter Dana, her sister Betty Sue, her brother David,
-          her first husband Eddie, her second husband and the love of her life Herb,
-          and her third husband Joe.
+          her first husband Eddie, her second husband Herb, and her third husband Joe.
         </p>
       </section>
 
