@@ -16,8 +16,11 @@ export default function Layout() {
           <div className="flex flex-wrap gap-1">
             <NavLink to="/" end className={navLinkClass}>Home</NavLink>
             <NavLink to="/photos" className={navLinkClass}>Photos</NavLink>
+            <NavLink to="/stories" className={navLinkClass}>Stories</NavLink>
+            <NavLink to="/timeline" className={navLinkClass}>Timeline</NavLink>
             <NavLink to="/guestbook" className={navLinkClass}>Guestbook</NavLink>
             <NavLink to="/candles" className={navLinkClass}>Light a Candle</NavLink>
+            <NavLink to="/rsvp" className={navLinkClass}>RSVP</NavLink>
           </div>
         </nav>
       </header>
