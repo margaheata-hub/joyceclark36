@@ -58,6 +58,16 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="mt-20 max-w-2xl mx-auto border-t border-moss-200 pt-12 text-center">
+        <h2 className="font-serif text-3xl md:text-4xl text-moss-800">Memorial Service</h2>
+        <p className="mt-4 text-moss-700 font-serif italic">
+          Details to come. The family is planning a gathering to celebrate Joyce's life.
+        </p>
+        <p className="mt-3 text-moss-600 text-sm">
+          Date, time, and location will be posted here as soon as they are confirmed.
+        </p>
+      </section>
+
       <div className="mt-16 text-center">
         <a
           href="/guestbook"
