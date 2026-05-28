@@ -13,7 +13,7 @@ export default function Home() {
           Joyce Clark
         </h1>
         <p className="mt-4 text-moss-700 tracking-widest text-sm uppercase">
-          July 8, 1936 &nbsp;·&nbsp; May 25, 2025
+          July 8, 1936 &nbsp;·&nbsp; May 25, 2026
         </p>
       </header>
 

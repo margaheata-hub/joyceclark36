@@ -30,7 +30,7 @@ export default function Layout() {
       </main>
 
       <footer className="border-t border-moss-200/60 py-8 text-center text-xs text-moss-700">
-        In loving memory · July 8, 1936 – May 25, 2025
+        In loving memory · July 8, 1936 – May 25, 2026
       </footer>
     </div>
   )

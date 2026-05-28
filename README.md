@@ -1,6 +1,6 @@
 # joyceclark36
 
-In loving memory of Joyce Clark (July 8, 1936 – May 25, 2025).
+In loving memory of Joyce Clark (July 8, 1936 – May 25, 2026).
 
 Private memorial site for family and friends. Built with Vite + React + TypeScript + Tailwind, deployed on Cloudflare Pages.
 
