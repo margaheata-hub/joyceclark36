@@ -1,4 +1,6 @@
-interface Env {
+import { sendNotify, NotifyEnv } from './_notify'
+
+interface Env extends NotifyEnv {
   DB: D1Database
 }
 
@@ -20,13 +22,14 @@ export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
   }
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUntil }) => {
   let body: { name?: string }
   try { body = await request.json() } catch { return bad('invalid_json') }
   const name = (body.name || '').trim().slice(0, MAX_NAME)
   if (!name) return bad('missing_name')
   try {
     await env.DB.prepare('INSERT INTO candles (name) VALUES (?)').bind(name).run()
+    waitUntil(sendNotify(env, `${name} lit a candle for Joyce`, [['Name', name]]))
     return new Response(JSON.stringify({ ok: true }), { headers: JSON_HEADERS })
   } catch {
     return new Response(JSON.stringify({ ok: false, error: 'db_error' }), { status: 500, headers: JSON_HEADERS })
