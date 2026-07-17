@@ -80,15 +80,18 @@ export default function RSVP() {
       <header className="text-center mb-10">
         <h2 className="font-serif text-4xl md:text-5xl text-moss-800">RSVP</h2>
         <p className="mt-3 text-moss-700 italic font-serif">
-          Memorial service for Joyce Clark
+          Celebration of Life for Joyce Clark
         </p>
       </header>
 
       <div className="bg-cream-50 border border-moss-200 rounded-sm p-6 md:p-8 mb-10 text-center shadow-sm">
-        <p className="text-xs uppercase tracking-widest text-clay-500">Service Details</p>
-        <p className="mt-2 font-serif text-xl text-moss-800">Date and location to be announced.</p>
+        <p className="text-xs uppercase tracking-widest text-clay-500">Event Details</p>
+        <p className="mt-2 font-serif text-xl text-moss-800">Sunday, September 6, 2026</p>
+        <p className="mt-1 text-moss-700">1:00&#8211;5:00 p.m. ET</p>
+        <p className="mt-2 text-moss-700">Winter Quarters Log Cabin</p>
+        <p className="text-moss-700">Winter Quarters Drive, Pocomoke City, Maryland</p>
         <p className="mt-3 text-sm text-moss-700">
-          Let us know you'd like to attend, and we'll be in touch with details as soon as they are set.
+          Please let us know you'd like to attend so we can plan. Everyone who loved Joyce is welcome.
         </p>
       </div>
 

@@ -59,13 +59,25 @@ export default function Home() {
       </section>
 
       <section className="mt-20 max-w-2xl mx-auto border-t border-moss-200 pt-12 text-center">
-        <h2 className="font-serif text-3xl md:text-4xl text-moss-800">Memorial Service</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-moss-800">Celebration of Life</h2>
         <p className="mt-4 text-moss-700 font-serif italic">
-          Details to come. The family is planning a gathering to celebrate Joyce's life.
+          Please join us as we gather to celebrate Joyce's life.
         </p>
-        <p className="mt-3 text-moss-600 text-sm">
-          Date, time, and location will be posted here as soon as they are confirmed.
-        </p>
+        <div className="mt-6 space-y-1">
+          <p className="font-serif text-xl text-moss-800">Sunday, September 6, 2026</p>
+          <p className="text-moss-700">1:00&#8211;5:00 p.m. ET</p>
+          <p className="text-moss-700 mt-2">Winter Quarters Log Cabin</p>
+          <p className="text-moss-700">Winter Quarters Drive, Pocomoke City, Maryland</p>
+        </div>
+        <div className="mt-8">
+          <a
+            href="/rsvp"
+            className="inline-block px-6 py-3 bg-moss-700 text-cream-50 rounded-sm
+                       text-sm uppercase tracking-widest hover:bg-moss-800 transition"
+          >
+            RSVP
+          </a>
+        </div>
       </section>
 
       <div className="mt-16 text-center">
