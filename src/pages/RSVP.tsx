@@ -44,6 +44,14 @@ export default function RSVP() {
       setError('Please share your name.')
       return
     }
+    if (!form.email.trim()) {
+      setError('Please share your email so we can reach you with details.')
+      return
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      setError('That email address does not look quite right.')
+      return
+    }
     setSubmitting(true)
     try {
       const res = await fetch('/api/rsvps', {
@@ -119,7 +127,7 @@ export default function RSVP() {
             />
           </label>
           <label className="block">
-            <span className="block text-xs uppercase tracking-widest text-moss-700 mb-1">Email (optional)</span>
+            <span className="block text-xs uppercase tracking-widest text-moss-700 mb-1">Email</span>
             <input
               type="email"
               value={form.email}

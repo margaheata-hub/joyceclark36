@@ -32,12 +32,12 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   try { body = await request.json() } catch { return bad('invalid_json') }
 
   const name = (body.name || '').trim().slice(0, MAX_NAME)
-  const email = (body.email || '').trim().slice(0, MAX_EMAIL) || null
+  const email = (body.email || '').trim().slice(0, MAX_EMAIL)
   const attendeesRaw = Number(body.attendees)
   const attendees = Number.isFinite(attendeesRaw) && attendeesRaw >= 1 && attendeesRaw <= 20 ? Math.floor(attendeesRaw) : 1
   const message = (body.message || '').trim().slice(0, MAX_MSG) || null
 
-  if (!name) return bad('missing_fields')
+  if (!name || !email) return bad('missing_fields')
 
   try {
     await env.DB.prepare(
