@@ -1,6 +1,4 @@
-import { sendNotify, NotifyEnv } from '../_notify'
-
-interface Env extends NotifyEnv {
+interface Env {
   DB: D1Database
   PHOTOS: R2Bucket
 }
@@ -31,7 +29,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
   }
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUntil }) => {
+export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let form: FormData
   try {
     form = await request.formData()
@@ -71,13 +69,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
     await env.PHOTOS.delete(filename).catch(() => {})
     return new Response(JSON.stringify({ ok: false, error: 'db_error' }), { status: 500, headers: JSON_HEADERS })
   }
-
-  waitUntil(sendNotify(env, `${uploader_name} added a photo`, [
-    ['Uploaded by', uploader_name],
-    ['Caption', caption],
-    ['Era', era],
-    ['File', filename],
-  ]))
 
   return new Response(JSON.stringify({ ok: true, filename }), { headers: JSON_HEADERS })
 }

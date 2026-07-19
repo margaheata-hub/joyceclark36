@@ -1,6 +1,4 @@
-import { sendNotify, NotifyEnv } from '../_notify'
-
-interface Env extends NotifyEnv {
+interface Env {
   DB: D1Database
   ADMIN_KEY: string
 }
@@ -29,7 +27,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
   }
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUntil }) => {
+export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let body: { name?: string; email?: string; attendees?: number; message?: string }
   try { body = await request.json() } catch { return bad('invalid_json') }
 
@@ -45,12 +43,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
     await env.DB.prepare(
       'INSERT INTO rsvps (name, email, attendees, message) VALUES (?, ?, ?, ?)'
     ).bind(name, email, attendees, message).run()
-    waitUntil(sendNotify(env, `New RSVP from ${name} (${attendees} ${attendees === 1 ? 'guest' : 'guests'})`, [
-      ['Name', name],
-      ['Email', email],
-      ['Party size', attendees],
-      ['Message', message],
-    ]))
     return new Response(JSON.stringify({ ok: true }), { headers: JSON_HEADERS })
   } catch {
     return new Response(JSON.stringify({ ok: false, error: 'db_error' }), { status: 500, headers: JSON_HEADERS })

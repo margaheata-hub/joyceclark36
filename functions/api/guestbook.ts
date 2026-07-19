@@ -1,6 +1,4 @@
-import { sendNotify, NotifyEnv } from './_notify'
-
-interface Env extends NotifyEnv {
+interface Env {
   DB: D1Database
 }
 
@@ -21,7 +19,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
   }
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUntil }) => {
+export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let body: { name?: string; relationship?: string; message?: string }
   try { body = await request.json() } catch { return bad('invalid_json') }
 
@@ -35,11 +33,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
     await env.DB.prepare(
       'INSERT INTO guestbook (name, relationship, message) VALUES (?, ?, ?)'
     ).bind(name, relationship, message).run()
-    waitUntil(sendNotify(env, `New guestbook message from ${name}`, [
-      ['Name', name],
-      ['Relationship', relationship],
-      ['Message', message],
-    ]))
     return new Response(JSON.stringify({ ok: true }), { headers: JSON_HEADERS })
   } catch (e) {
     return new Response(JSON.stringify({ ok: false, error: 'db_error' }), { status: 500, headers: JSON_HEADERS })
