@@ -15,6 +15,16 @@ const familyPhotos: FamilyPhoto[] = [
   { src: '/photos/joyce-red-shirt.jpg',       caption: 'Outside, in her element',  era: 'Later years',  family: true },
   { src: '/photos/joyce-elder.jpg',           caption: 'Smiling, always',          era: 'Later years',  family: true },
   { src: '/photos/joyce-elder-couple.jpg',    caption: 'With family',              era: 'Later years',  family: true },
+  { src: '/photos/joyce-with-family.jpg',     caption: 'Generations together',     era: 'Later years',  family: true },
+  { src: '/photos/joyce-porch-toast.jpg',     caption: 'A porch toast',            era: 'Later years',  family: true },
+  { src: '/photos/joyce-porch-birthday.jpg',  caption: 'Cake on the porch',        era: 'Later years',  family: true },
+  { src: '/photos/joyce-flowers.jpg',         caption: 'Fresh flowers',            era: 'Later years',  family: true },
+  { src: '/photos/joyce-beach.jpg',           caption: 'A find on the beach',      era: 'Later years',  family: true },
+  { src: '/photos/joyce-ice-cream.jpg',       caption: 'Out for ice cream',        era: 'Later years',  family: true },
+  { src: '/photos/joyce-beaded-fish.jpg',     caption: 'Delighted with a gift',    era: 'Later years',  family: true },
+  { src: '/photos/joyce-salon.jpg',           caption: 'Salon day',                era: 'Later years',  family: true },
+  { src: '/photos/joyce-dessert.jpg',         caption: 'Dessert first',            era: 'Later years',  family: true },
+  { src: '/photos/joyce-89th-birthday.jpg',   caption: 'Eighty-nine candles',      era: 'Later years',  family: true },
 ]
 
 const ERAS = ['Wedding', 'Mid-life', 'Later years', 'Family', 'Other']
