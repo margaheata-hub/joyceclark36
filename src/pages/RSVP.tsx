@@ -106,7 +106,7 @@ export default function RSVP() {
       <form onSubmit={submit} className="bg-cream-50 border border-moss-200 rounded-sm p-6 md:p-8 shadow-sm">
         {success && (
           <div className="mb-4 p-3 bg-moss-100 border border-moss-300 text-moss-800 text-sm rounded-sm">
-            Thank you. The family has been notified.
+            Thank you. A confirmation email is on its way to you.
           </div>
         )}
         {error && (
@@ -141,14 +141,17 @@ export default function RSVP() {
 
         <label className="block mb-4 max-w-xs">
           <span className="block text-xs uppercase tracking-widest text-moss-700 mb-1">In your party</span>
-          <input
-            type="number"
-            min={1}
-            max={20}
+          <select
             value={form.attendees}
-            onChange={(e) => setForm({ ...form, attendees: Math.max(1, Math.min(20, Number(e.target.value) || 1)) })}
+            onChange={(e) => setForm({ ...form, attendees: Number(e.target.value) })}
             className="w-full border border-moss-200 bg-white px-3 py-2 text-moss-900 focus:outline-none focus:border-moss-500"
-          />
+          >
+            {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+              <option key={n} value={n}>
+                {n} {n === 1 ? 'person' : 'people'}
+              </option>
+            ))}
+          </select>
         </label>
 
         <label className="block mb-4">
